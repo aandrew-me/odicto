@@ -2,7 +2,7 @@
 name = "odicto"
 version = "0.1.0"
 description = "Offline English dictionary app"
-authors = ["you"]
+authors = ["Andrew"]
 license = "GPL-3"
 repository = ""
 edition = "2023"

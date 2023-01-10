@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "offline-dictionary",
-    "version": "0.0.0"
+    "productName": "odict",
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -20,7 +20,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
+      "category": "Utility",
       "copyright": "",
       "deb": {
         "depends": []
@@ -33,8 +33,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "app.vercel.odicto",
+      "longDescription": "Offline English dictionary app",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -62,7 +62,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "offline-dictionary",
+        "title": "OdictO - Offline Dictionary",
         "width": 800
       }
     ]
