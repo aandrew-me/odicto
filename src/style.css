@@ -1,0 +1,55 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding:20px;
+}
+h1{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+#searchBtn{
+    background-color: rgb(34, 221, 43);
+    color:white;
+    padding:10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    border-bottom: 5px solid rgb(20, 170, 27);
+}
+#searchBox{
+    padding:10px;
+    width:500px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid gray;
+    position: relative;
+    top: 3px;
+}
+
+.errorTxt{
+    color:red;
+}
+
+#info{
+    text-align: left;
+    background-color: aliceblue;
+    padding: 0px 55px;
+    border-radius: 10px;
+    display:inline-block;
+}
+
+.meaning{
+    font-weight: bold;
+}
+
+.partsOfSpeech{
+    font-weight: bold;
+    color:rgb(23, 23, 206);
+    font-style: italic;
+}
+
+.example{
+    font-style: italic;
+}
