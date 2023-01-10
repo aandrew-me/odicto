@@ -1,6 +1,3 @@
-import { useState } from "react";
-import Meanings from "./Meanings";
-
 export default function Meaning(props) {
 	const meanings = props.props.MEANINGS;
 	let allMeanings = [];
@@ -11,22 +8,35 @@ export default function Meaning(props) {
 		}
 	}
 
-  const elements = allMeanings.map(element => {
-    return (
-      <>
-      <p className="partsOfSpeech">{element[0]}</p>
-      <p className="meaning">{element[1]}</p>
-      <p className="example">{element[3]}</p>
-      </>
-    )
-  })
+	const elements = allMeanings.map((element) => {
+		return (
+			<div key={Math.random().toFixed(10).toString().slice(2)}>
+				<p
+					key={Math.random().toFixed(10).toString().slice(2)}
+					className="partsOfSpeech"
+				>
+					{element[0]}
+				</p>
+				<p
+					key={Math.random().toFixed(10).toString().slice(2)}
+					className="meaning"
+				>
+					{element[1]}
+				</p>
+				<p
+					key={Math.random().toFixed(10).toString().slice(2)}
+					className="example"
+				>
+					{element[3]}
+				</p>
+			</div>
+		);
+	});
 
-
-
-  return(
-    <div id="info">
-      <h1>{props.props.word}</h1>
-      {elements}
-    </div>
-  );
+	return (
+		<div id="info">
+			<h1>{props.props.word}</h1>
+			{elements}
+		</div>
+	);
 }
