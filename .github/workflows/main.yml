@@ -13,14 +13,13 @@ jobs:
 
         runs-on: ${{ matrix.platform }}
         steps:
-            - name: Set environment variable
-              env:
-                  NODE_OPTIONS: --max_old_space_size=4096
             - uses: actions/checkout@v3
             - name: setup node
               uses: actions/setup-node@v3
               with:
                   node-version: 16
+              env:
+                  NODE_OPTIONS: --max_old_space_size=4096
             - name: install Rust stable
               uses: dtolnay/rust-toolchain@stable
             - name: install dependencies (ubuntu only)
@@ -34,7 +33,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+                  tagName: app-v__VERSION__ 
                   releaseName: "App v__VERSION__"
                   releaseBody: "See the assets to download this version and install."
                   releaseDraft: true
