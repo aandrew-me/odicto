@@ -33,10 +33,26 @@ export default function Meaning(props) {
 		);
 	});
 
+	let synonyms = ""
+	props.props.SYNONYMS.forEach(item => {
+		synonyms += ` ${item} `
+	})
+
+	let antonyms = ""
+	props.props.ANTONYMS.forEach(item => {
+		antonyms += ` ${item} `
+	})
+	console.log(synonyms)
 	return (
 		<div id="info">
 			<h1>{props.props.word}</h1>
 			{elements}
+			<span className="synonym">{synonyms? "Synonyms: " : ""}</span>
+			<span>{synonyms? synonyms: ""}</span>
+			<br></br>
+			<span className="antonym">{antonyms? "Antonyms: " : ""}</span>
+			<span>{antonyms? "Antonyms " + antonyms: ""}</span>
+
 		</div>
 	);
 }

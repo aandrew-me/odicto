@@ -16,7 +16,14 @@ h1{
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    border-bottom: 5px solid rgb(20, 170, 27);
+    border-bottom: 4px solid rgb(20, 170, 27);
+    font-size: large;
+    position: relative;
+}
+#searchBtn:active{
+    top:4px;
+    border:none;
+    
 }
 #searchBox{
     padding:10px;
@@ -35,9 +42,11 @@ h1{
 #info{
     text-align: left;
     background-color: aliceblue;
-    padding: 0px 55px;
+    padding: 0px 55px 55px 55px;
     border-radius: 10px;
     display:inline-block;
+    width:80%;
+    box-shadow: 2px 2px 5px gray;
 }
 
 .meaning{
@@ -52,4 +61,12 @@ h1{
 
 .example{
     font-style: italic;
+}
+.synonym{
+    color:rgb(4, 186, 50);
+    font-weight: bold;
+}
+.antonym{
+    color:rgb(202, 45, 18);
+    font-weight: bold;
 }
