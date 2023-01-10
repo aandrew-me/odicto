@@ -6,7 +6,7 @@ on:
 
 env:
   NODE_OPTIONS: --max_old_space_size=4096
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
 
 jobs:
