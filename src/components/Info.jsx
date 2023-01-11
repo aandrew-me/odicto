@@ -27,7 +27,9 @@ export default function Meaning(props) {
 					key={Math.random().toFixed(10).toString().slice(2)}
 					className="example"
 				>
-					{element[3]}
+					{element[3].map(element => {
+						return <p>{element}</p>
+						})}
 				</p>
 			</div>
 		);

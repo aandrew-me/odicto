@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Info from "./Info";
 
+
 export default function Main() {
+
 	const [dictionary, setDictionary] = useState();
 	useEffect(() => {
 		const dictionary = require("../scripts/dictionary.js").default;
