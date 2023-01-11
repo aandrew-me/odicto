@@ -33,25 +33,45 @@ export default function Meaning(props) {
 		);
 	});
 
-	let synonyms = ""
-	props.props.SYNONYMS.forEach(item => {
-		synonyms += ` ${item} `
+	
+
+	const allSynonyms = props.props.SYNONYMS.map(item => {
+		let synonyms = null
+		if(props.props.SYNONYMS.length > props.props.SYNONYMS.indexOf(item) + 1){
+			synonyms = <span key={item} className="synAnt" onClick={()=>{getMeaning(item)}}>{` ${item}, `}</span>
+		}
+		else{
+			synonyms = <span key={item} className="synAnt" onClick={()=>{getMeaning(item)}}>{` ${item} `}</span>
+		}
+		return synonyms
 	})
 
-	let antonyms = ""
-	props.props.ANTONYMS.forEach(item => {
-		antonyms += ` ${item} `
+	
+	const allAntonyms = props.props.ANTONYMS.map(item => {
+		let antonyms = null
+		if (props.props.ANTONYMS.length > props.props.ANTONYMS.indexOf(item) + 1){
+			antonyms = <span key={item} className="synAnt" onClick={getMeaning}>{` ${item.slice(0,1).toUpperCase() + item.slice(1)}, `}</span>
+		}
+		else{
+			antonyms = <span key={item} className="synAnt" onClick={getMeaning}>{` ${item.slice(0,1).toUpperCase() + item.slice(1)} `}</span>
+		}
+		return antonyms
 	})
-	console.log(synonyms)
+
+	function getMeaning(item){
+		props.props.getMeaning(item)
+	}
+
+	// Rendering part
 	return (
 		<div id="info">
 			<h1>{props.props.word}</h1>
 			{elements}
-			<span className="synonym">{synonyms? "Synonyms: " : ""}</span>
-			<span>{synonyms? synonyms: ""}</span>
+			<span className="synonymTxt">{allSynonyms? "Synonyms: " : ""}</span>
+			<span>{allSynonyms? allSynonyms: ""}</span>
 			<br></br>
-			<span className="antonym">{antonyms? "Antonyms: " : ""}</span>
-			<span>{antonyms? "Antonyms " + antonyms: ""}</span>
+			<span className="antonymTxt">{allAntonyms.length > 0? "Antonyms: " : ""}</span>
+			<span>{allAntonyms? allAntonyms: ""}</span>
 
 		</div>
 	);

@@ -1,9 +1,10 @@
 name: "publish"
 on:
-    push:
-        branches:
-            - main
-
+  push:
+    paths:
+      - 'version.txt'
+    branches:
+      - 'main'
 env:
     NODE_OPTIONS: --max_old_space_size=4096
 

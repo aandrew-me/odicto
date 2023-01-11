@@ -1,5 +1,3 @@
-// Thanks to https://stackoverflow.com/questions/41768215/english-json-dictionary-with-word-word-type-and-definition/54982015#54982015
-
 import DA from "../assets/dictionaries/DA.json" 
 import DB from "../assets/dictionaries/DB.json" 
 import DC from "../assets/dictionaries/DC.json" 

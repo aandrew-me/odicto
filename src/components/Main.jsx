@@ -12,8 +12,12 @@ export default function Main() {
 	const [errorTxt, setErrorTxt] = useState("");
 	const [info, setInfo] = useState();
 
-	function getMeaning() {
-		const input = String(searchTxt.current.value.toUpperCase());
+	function getMeaning(item) {
+		const input =  item? item.toUpperCase() : String(searchTxt.current.value.toUpperCase());
+		if(item){
+			searchTxt.current.value = item
+		}
+		console.log("Input is", input)
 		if (input) {
 			console.log(dictionary);
 			const dictObj = "D" + input.slice(0, 1).toUpperCase();
@@ -27,7 +31,7 @@ export default function Main() {
 
 			if (definition) {
 				setErrorTxt("");
-				setInfo(<Info props={{ word: input, ...definition }} />);
+				setInfo(<Info props={{ word: input, ...definition, getMeaning:getMeaning }} />);
 			} else {
 				setErrorTxt("The word is not in Dictionary");
 				setInfo("");
@@ -52,7 +56,7 @@ export default function Main() {
 				placeholder="Search Dictionary"
 				ref={searchTxt}
 			/>
-			<button id="searchBtn" onClick={getMeaning}>
+			<button id="searchBtn" onClick={()=>{getMeaning("")}}>
 				Search
 			</button>
 			<div id="definition">

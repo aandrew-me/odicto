@@ -62,11 +62,18 @@ h1{
 .example{
     font-style: italic;
 }
-.synonym{
+.synonymTxt{
     color:rgb(4, 186, 50);
-    font-weight: bold;
 }
-.antonym{
+.antonymTxt{
     color:rgb(202, 45, 18);
+}
+.synonymTxt,.antonymTxt{
     font-weight: bold;
+    cursor: pointer;
+
+}
+
+.synAnt{
+    cursor: pointer;
 }
