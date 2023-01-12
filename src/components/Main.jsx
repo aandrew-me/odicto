@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Info from "./Info";
-
+import menuIcon from "../menu.png";
+import Menu from "./Menu";
 
 export default function Main() {
-
 	const [dictionary, setDictionary] = useState();
 	useEffect(() => {
 		const dictionary = require("../scripts/dictionary.js").default;
@@ -15,17 +15,19 @@ export default function Main() {
 	const [info, setInfo] = useState();
 
 	function getMeaning(item) {
-		const input =  item? item.toUpperCase() : String(searchTxt.current.value.toUpperCase());
-		if(item){
-			searchTxt.current.value = item
+		const input = item
+			? item.toUpperCase()
+			: String(searchTxt.current.value.toUpperCase());
+		if (item) {
+			searchTxt.current.value = item;
 		}
-		console.log("Input is", input)
+		console.log("Input is", input);
 		if (input) {
-			console.log(dictionary);
 			const dictObj = "D" + input.slice(0, 1).toUpperCase();
 			let definition;
 			try {
 				definition = dictionary[dictObj][input];
+				console.log(definition);
 			} catch (error) {
 				setErrorTxt("Enter a word");
 				setInfo("");
@@ -33,7 +35,15 @@ export default function Main() {
 
 			if (definition) {
 				setErrorTxt("");
-				setInfo(<Info props={{ word: input, ...definition, getMeaning:getMeaning }} />);
+				setInfo(
+					<Info
+						props={{
+							word: input,
+							...definition,
+							getMeaning: getMeaning,
+						}}
+					/>
+				);
 			} else {
 				setErrorTxt("The word is not in Dictionary");
 				setInfo("");
@@ -43,14 +53,34 @@ export default function Main() {
 			setInfo("");
 		}
 	}
+
 	function handleKeyPress(event) {
 		if (event.key === "Enter") {
 			getMeaning();
 		}
 	}
+	
+	let menuIsOpen = false
+	function openMenu(){
+		if (menuIsOpen){
+			getId("menu").style.display = "none"
+			menuIsOpen = false
+
+		}
+		else{
+			getId("menu").style.display = "block"
+			menuIsOpen = true;
+		}
+	}
+
+	function getId(id){
+		return document.getElementById(id)
+	}
 
 	return (
 		<div>
+			<img src={menuIcon.src} alt="menu" id="menuBtn" onClick={openMenu}/>
+			<Menu/>
 			<input
 				onKeyDown={handleKeyPress}
 				type="text"
@@ -58,7 +88,12 @@ export default function Main() {
 				placeholder="Search Dictionary"
 				ref={searchTxt}
 			/>
-			<button id="searchBtn" onClick={()=>{getMeaning("")}}>
+			<button
+				id="searchBtn"
+				onClick={() => {
+					getMeaning("");
+				}}
+			>
 				Search
 			</button>
 			<div id="definition">

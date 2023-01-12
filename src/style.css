@@ -2,9 +2,54 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     padding:20px;
+    color:white;
+    background-color: rgb(41, 41, 41);
+}
+#menuBtn{
+    width:50px;
+    height:50px;
+    position:absolute;
+    top:25px;
+    right:25px;
+    cursor: pointer;
+    z-index:2;
+}
+
+#menu{
+    /* display: none; */
+	flex-direction: column;
+	backdrop-filter: blur(16px) saturate(160%);
+	-webkit-backdrop-filter: blur(16px) saturate(160%);
+	background-color: rgba(17, 25, 40, 0.75);
+	border-radius: 12px;
+	position: absolute;
+	top: 40px;
+	right: 80px;
+	padding: 25px;
+	text-align: left;
+	opacity: 1;
+	font-size: large;
+	z-index: 2;
+	font-family: sans-serif;
+    scale: 1;
+}
+
+/* #Menu{
+    display:none;
+} */
+.menuInput{
+    color:white;
+    background-color: rgba(17, 25, 40, 0.75);
+    border:none;
+    padding:5px;
+    padding:5px;
+}
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
 }
 h1{
-    font-size: 40px;
     font-family: sans-serif;
     font-weight: normal;
     text-align: center;
@@ -12,7 +57,7 @@ h1{
 #searchBtn{
     background-color: rgb(34, 221, 43);
     color:white;
-    padding:10px;
+    padding:15px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -23,10 +68,11 @@ h1{
 #searchBtn:active{
     top:4px;
     border:none;
+    margin-bottom: 6px;
     
 }
 #searchBox{
-    padding:10px;
+    padding:15px;
     width:500px;
     text-align: center;
     border-radius: 10px;
@@ -41,26 +87,33 @@ h1{
 
 #info{
     text-align: left;
-    background-color: aliceblue;
+    background-color: rgb(70, 70, 70);
     padding: 0px 55px 55px 55px;
     border-radius: 10px;
     display:inline-block;
     width:80%;
-    box-shadow: 2px 2px 5px gray;
 }
-
+.elements{
+    background-color: rgb(60, 60, 60);
+    padding:5px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
 .meaning{
     font-weight: bold;
+    margin:0px;
 }
 
 .partsOfSpeech{
     font-weight: bold;
-    color:rgb(23, 23, 206);
+    color:rgb(126, 126, 232);
     font-style: italic;
 }
 
 .example{
     font-style: italic;
+    display: inline-block;
+    margin:0;
 }
 .synonymTxt{
     color:rgb(4, 186, 50);

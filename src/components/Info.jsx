@@ -10,22 +10,25 @@ export default function Meaning(props) {
 
 	const elements = allMeanings.map((element) => {
 		return (
-			<div key={Math.random().toFixed(10).toString().slice(2)}>
+			<div className="elements" key={Math.random().toFixed(10).toString().slice(2)}>
 				<p
 					key={Math.random().toFixed(10).toString().slice(2)}
 					className="partsOfSpeech"
+					title="Part of Speech"
 				>
 					{element[0]}
 				</p>
 				<p
 					key={Math.random().toFixed(10).toString().slice(2)}
 					className="meaning"
+					title="Meaning"
 				>
 					{element[1]}
 				</p>
 				<p
 					key={Math.random().toFixed(10).toString().slice(2)}
 					className="example"
+					title="Example"
 				>
 					{element[3].map(element => {
 						return <p>{element}</p>
@@ -69,6 +72,7 @@ export default function Meaning(props) {
 		<div id="info">
 			<h1>{props.props.word}</h1>
 			{elements}
+			<br></br>
 			<span className="synonymTxt">{allSynonyms? "Synonyms: " : ""}</span>
 			<span>{allSynonyms? allSynonyms: ""}</span>
 			<br></br>
