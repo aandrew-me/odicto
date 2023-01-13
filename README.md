@@ -7,4 +7,6 @@ WordNet 2021 edition has been used for definitions.
 
 Still under development
 
-![ksnip_20230110-233327](https://user-images.githubusercontent.com/66430340/211622093-3bb336b9-96a5-4d43-beea-fbd9495fd774.jpg)
+Screenshots
+![odicto_dark](https://user-images.githubusercontent.com/66430340/212386847-e325f210-5a99-4c71-86e9-22e4f7f76b36.jpg)
+![odicto_light](https://user-images.githubusercontent.com/66430340/212386884-eb3de1d1-6a53-4d2b-a492-7ce67b1e68a7.jpg)
