@@ -1,9 +1,27 @@
+@import "@catppuccin/palette/style";
+:root{
+    --bodyBgColor: var(--ctp-macchiato-crust);
+    --bodyTxtColor: var(--ctp-macchiato-text);
+    --menuBgColor: var(--ctp-macchiato-base);
+    --menuTxtColor: var(--ctp-macchiato-text);
+    --menuInputBgColor: var(--ctp-macchiato-base);
+    --menuInputTxtColor: var(--ctp-macchiato-base);
+    --elementBgColor: var(--ctp-macchiato-surface0);
+    --elementTxtColor: var(--ctp-macchiato-text);
+    --menuInputBgColor : var(--ctp-macchiato-base);
+    --menuInputTxtColor : var(--ctp-macchiato-text);
+    --speechColor : var(--ctp-macchiato-blue);
+    --synonym: var(--ctp-macchiato-green);
+    --antonym: var(--ctp-macchiato-red);
+}
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     padding:20px;
-    color:white;
-    background-color: rgb(41, 41, 41);
+    background-color: var(--bodyBgColor);
+    color: var(--bodyTxtColor);
+    transition: .5s all;
+    font-size:18px;
 }
 #menuBtn{
     width:50px;
@@ -20,7 +38,8 @@ body{
 	flex-direction: column;
 	backdrop-filter: blur(16px) saturate(160%);
 	-webkit-backdrop-filter: blur(16px) saturate(160%);
-	background-color: rgba(17, 25, 40, 0.75);
+    background-color: var(--menuBgColor);
+    color: var(--menuTxtColor);
 	border-radius: 12px;
 	position: absolute;
 	top: 40px;
@@ -32,12 +51,9 @@ body{
 	font-family: sans-serif;
 }
 
-/* #Menu{
-    display:none;
-} */
 .menuInput{
-    color:white;
-    background-color: rgba(17, 25, 40, 0.75);
+    background-color:var(--menuInputBgColor);
+    color: var(--menuInputTxtColor);
     border:none;
     padding:5px;
     padding:5px;
@@ -51,15 +67,16 @@ h1{
     font-family: sans-serif;
     font-weight: normal;
     text-align: center;
+    font-size:38px;
 }
 #searchBtn{
-    background-color: rgb(34, 221, 43);
+    background-color: rgb(33, 201, 55);
     color:white;
     padding:15px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    border-bottom: 4px solid rgb(20, 170, 27);
+    border-bottom: 4px solid rgb(20, 134, 25);
     font-size: large;
     position: relative;
 }
@@ -80,19 +97,19 @@ h1{
 }
 
 .errorTxt{
-    color:red;
+    color: var(--ctp-macchiato-red)
 }
 
 #info{
     text-align: left;
-    background-color: rgb(70, 70, 70);
     padding: 0px 55px 55px 55px;
     border-radius: 10px;
     display:inline-block;
     width:80%;
 }
 .elements{
-    background-color: rgb(60, 60, 60);
+    background-color: var(--elementBgColor);    
+    color: var(--elementTxtColor);
     padding:5px 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -104,7 +121,7 @@ h1{
 
 .partsOfSpeech{
     font-weight: bold;
-    color:rgb(126, 126, 232);
+    color: var(--speechColor);
     font-style: italic;
 }
 
@@ -114,10 +131,10 @@ h1{
     margin:0;
 }
 .synonymTxt{
-    color:rgb(4, 186, 50);
+    color: var(--synonym)
 }
 .antonymTxt{
-    color:rgb(202, 45, 18);
+    color:var(--antonym)
 }
 .synonymTxt,.antonymTxt{
     font-weight: bold;
@@ -127,4 +144,5 @@ h1{
 
 .synAnt{
     cursor: pointer;
+    margin-left:5px;
 }

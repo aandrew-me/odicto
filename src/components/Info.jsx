@@ -70,11 +70,12 @@ export default function Meaning(props) {
 	// Rendering part
 	return (
 		<div id="info">
-			<h1>{props.props.word}</h1>
+			<h1 id="h1">{props.props.word}</h1>
 			{elements}
 			<br></br>
 			<span className="synonymTxt">{allSynonyms? "Synonyms: " : ""}</span>
 			<span>{allSynonyms? allSynonyms: ""}</span>
+			<br></br>
 			<br></br>
 			<span className="antonymTxt">{allAntonyms.length > 0? "Antonyms: " : ""}</span>
 			<span>{allAntonyms? allAntonyms: ""}</span>
