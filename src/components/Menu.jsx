@@ -1,8 +1,10 @@
+import dynamic from "next/dynamic";
 
 function Menu() {
 	return (
 		<div id="menu">
 			<table>
+				<tbody>
 				<tr>
 					<td>Font Size</td>
 					<td>
@@ -28,9 +30,12 @@ function Menu() {
                         </select>
                     </td>
 				</tr>
+				</tbody>
 			</table>
 		</div>
 	);
 }
 
-export default Menu;
+export default dynamic(() => Promise.resolve(Menu), {
+	ssr: false
+  })

@@ -25,7 +25,7 @@ export default function Meaning(props) {
 				>
 					{element[1]}
 				</p>
-				<p
+				<div
 					key={Math.random().toFixed(10).toString().slice(2)}
 					className="example"
 					title="Example"
@@ -33,7 +33,7 @@ export default function Meaning(props) {
 					{element[3].map(element => {
 						return <p>{element}</p>
 						})}
-				</p>
+				</div>
 			</div>
 		);
 	});

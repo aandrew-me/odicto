@@ -16,7 +16,7 @@ body{
 }
 
 #menu{
-    /* display: none; */
+    display: none;
 	flex-direction: column;
 	backdrop-filter: blur(16px) saturate(160%);
 	-webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -27,11 +27,9 @@ body{
 	right: 80px;
 	padding: 25px;
 	text-align: left;
-	opacity: 1;
 	font-size: large;
 	z-index: 2;
 	font-family: sans-serif;
-    scale: 1;
 }
 
 /* #Menu{
