@@ -1,15 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Info from "./Info";
-import menuIcon from "../menu.png";
 import Menu from "./Menu";
+import dictionary from "../scripts/dictionary.js"
+
 
 export default function Main() {
-	const [dictionary, setDictionary] = useState();
-	useEffect(() => {
-		const dictionary = require("../scripts/dictionary.js").default;
-		setDictionary(dictionary);
-	}, []);
-
 	const searchTxt = useRef();
 	const [errorTxt, setErrorTxt] = useState("");
 	const [info, setInfo] = useState();
@@ -60,16 +55,16 @@ export default function Main() {
 		}
 	}
 	
-	let menuIsOpen = false
+	
 	function openMenu(){
-		if (menuIsOpen){
+		const menuElement = getId("menu")
+
+		if (menuElement.style.display == "block"){
 			getId("menu").style.display = "none"
-			menuIsOpen = false
 
 		}
 		else{
 			getId("menu").style.display = "block"
-			menuIsOpen = true;
 		}
 	}
 
@@ -79,7 +74,7 @@ export default function Main() {
 
 	return (
 		<div>
-			<img src={menuIcon.src} alt="menu" id="menuBtn" onClick={openMenu}/>
+			<img src={"/menu.png"} alt="menu" id="menuBtn" onClick={openMenu}/>
 			<Menu/>
 			<input
 				onKeyDown={handleKeyPress}

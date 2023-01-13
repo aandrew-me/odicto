@@ -4,6 +4,7 @@ body{
     padding:20px;
     color:white;
     background-color: rgb(41, 41, 41);
+    font-size: 18px;
 }
 #menuBtn{
     width:50px;
@@ -16,7 +17,7 @@ body{
 }
 
 #menu{
-    /* display: none; */
+    display: none;
 	flex-direction: column;
 	backdrop-filter: blur(16px) saturate(160%);
 	-webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -27,11 +28,9 @@ body{
 	right: 80px;
 	padding: 25px;
 	text-align: left;
-	opacity: 1;
 	font-size: large;
 	z-index: 2;
 	font-family: sans-serif;
-    scale: 1;
 }
 
 /* #Menu{
@@ -62,7 +61,7 @@ h1{
     border: none;
     cursor: pointer;
     border-bottom: 4px solid rgb(20, 170, 27);
-    font-size: large;
+    font-size: 18px;
     position: relative;
 }
 #searchBtn:active{
@@ -79,6 +78,7 @@ h1{
     border: 1px solid gray;
     position: relative;
     top: 3px;
+    font-size: 18px;
 }
 
 .errorTxt{
