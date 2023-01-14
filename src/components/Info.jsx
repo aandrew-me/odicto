@@ -55,10 +55,10 @@ export default function Meaning(props) {
 	const allAntonyms = props.props.ANTONYMS.map(item => {
 		let antonyms = null
 		if (props.props.ANTONYMS.length > props.props.ANTONYMS.indexOf(item) + 1){
-			antonyms = <span key={item} className="synAnt" onClick={getMeaning}>{` ${item.slice(0,1).toUpperCase() + item.slice(1)}, `}</span>
+			antonyms = <span key={item} className="synAnt" onClick={()=>{getMeaning(item)}}>{` ${item.slice(0,1).toUpperCase() + item.slice(1)}, `}</span>
 		}
 		else{
-			antonyms = <span key={item} className="synAnt" onClick={getMeaning}>{` ${item.slice(0,1).toUpperCase() + item.slice(1)} `}</span>
+			antonyms = <span key={item} className="synAnt" onClick={()=>{getMeaning(item)}} >{` ${item.slice(0,1).toUpperCase() + item.slice(1)} `}</span>
 		}
 		return antonyms
 	})
