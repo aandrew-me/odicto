@@ -8,12 +8,12 @@ export default function Main() {
 	useEffect(() => {
 		const dictionary = require("../scripts/dictionary.js").default;
 		setDictionary(dictionary);
+		searchTxt.current.focus()
 	}, []);
 
 	const searchTxt = useRef();
 	const [errorTxt, setErrorTxt] = useState("");
 	const [info, setInfo] = useState();
-
 	function getMeaning(item) {
 		const input = item
 			? item.toUpperCase()
