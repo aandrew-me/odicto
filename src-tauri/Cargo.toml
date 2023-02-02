@@ -1,6 +1,6 @@
 [package]
 name = "odicto"
-version = "0.6.0"
+version = "0.7.0"
 description = "Offline English dictionary app"
 authors = ["Andrew"]
 license = "GPL-3"
